@@ -62,18 +62,18 @@ A developer can easily get confused about the functionality of any of these meth
         ```
 
 
-- Searchable variables and constants should be used.
-   * Suppose you have a working project. There is a requirement for every user to be at least 18 years old. You have implemented this in the following way:
+- ### Searchable variables and constants should be used.
+    * Suppose you have a working project. There is a requirement for every user to be at least 18 years old. You have implemented this in the following way:
         ```python
-        create_person(data):
-        if data['age']['year'] < 18:
-            return None
+        def create_person(data):
+            if data['age']['year'] < 18:
+                return None
         ```
-  - similarly, you have used this number `18` in other places where this was required in any way.
+    * similarly, you have used this number `18` in other places where this was required in any way.
 
-    Now the requirement is changed and the user must be at least 15 years old to create an account. What would you do to now? Search for every occurrence of number `18` and decide if this is the number used for our purpose and then change it everywhere.
+        Now the requirement is changed and the user must be at least 15 years old to create an account. What would you do to now? Search for every occurrence of number `18` and decide if this is the number used for our purpose and then change it everywhere.
 
-    or you could have simply used a constant `MIN_AGE_REQ=18` or `MINIMUM_AGE_REQUIREMENT=18`(which is more meaningful and searchable). Then you would have to simply change the value of this constant to satisfy the new requirement.
+        or you could have simply used a constant `MIN_AGE_REQ=18` or `MINIMUM_AGE_REQUIREMENT=18`(which is more meaningful and searchable). Then you would have to simply change the value of this constant to satisfy the new requirement.
 
 - ### Class names should always be nouns.
    * Class names and objects should always be nouns like `Person`, `Car`, `Record` and so on. Avoid generic and language-specific technical names like `Info`, `Manager` and `Controller`.
